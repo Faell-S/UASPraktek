@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Happy Paws",
+    "slug": "happy-paws",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFF3E6"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.happypaws.uas",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#FF8A3D"
+      },
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.happypaws.uas"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "PASANG-PROJECT-ID-EAS-ANDA"
+      }
+    }
+  }
+}
