@@ -4,7 +4,7 @@
 ![Expo](https://img.shields.io/badge/Expo-000020?style=flat&logo=expo&logoColor=white)
 ![AsyncStorage](https://img.shields.io/badge/AsyncStorage-Local_Persistence-00b894)
 
-> [Deskripsi singkat: apa yang dilakukan app ini, untuk siapa, masalah apa yang diselesaikan — 2-3 kalimat]
+> [Happy Paws adalah aplikasi kasir dan katalog produk untuk toko perlengkapan hewan (pet shop), ditujukan bagi pemilik UMKM warung hewan peliharaan yang ingin mengelola penjualan secara digital dari HP. Aplikasi ini menyelesaikan masalah pencatatan produk, transaksi, dan riwayat penjualan yang masih manual — pemilik toko bisa menambahkan produk beserta foto, mengelola keranjang belanja pelanggan, dan melihat riwayat transaksi yang tersimpan otomatis meski aplikasi ditutup.]
 
 ---
 
