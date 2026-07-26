@@ -1,118 +1,73 @@
-# 🐾 Happy Paws
+# [Happy Paws] — [Domain: Warung Digital]
 
-Aplikasi kasir & katalog produk untuk toko perlengkapan hewan (UMKM pet shop).
-Dibuat untuk UAS Mata Kuliah Pemrograman Mobile — **Domain C: Warung Digital**.
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo-000020?style=flat&logo=expo&logoColor=white)
+![AsyncStorage](https://img.shields.io/badge/AsyncStorage-Local_Persistence-00b894)
 
-## Deskripsi Aplikasi
+> [Happy Paws adalah aplikasi kasir dan katalog produk untuk toko perlengkapan hewan (pet shop), ditujukan bagi pemilik UMKM warung hewan peliharaan yang ingin mengelola penjualan secara digital dari HP. Aplikasi ini menyelesaikan masalah pencatatan produk, transaksi, dan riwayat penjualan yang masih manual — pemilik toko bisa menambahkan produk beserta foto, mengelola keranjang belanja pelanggan, dan melihat riwayat transaksi yang tersimpan otomatis meski aplikasi ditutup.]
 
-Happy Paws memungkinkan pemilik warung perlengkapan hewan untuk:
-- Login / mendaftarkan akun toko
-- Mengelola katalog produk (tambah, lihat, hapus) lengkap dengan foto
-- Menambahkan produk ke keranjang belanja dan melihat total harga
-- Melakukan checkout yang otomatis tercatat di riwayat transaksi
-- Melihat profil toko dan logout
+---
 
-## Domain & Fitur
+## 📸 Screenshots
 
-**Domain C — Warung Digital**
+| Login Screen | Home Screen | Feature Screen |
+|:---:|:---:|:---:|
+| ![Login](<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/420ba51d-55d4-4efa-b210-8772341d549a" />
+) | ![Home](<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/2985fb74-551f-448f-81b7-016a26cdcfc6" />
+) | ![Feature](<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/e8768a50-577e-484e-8066-2b0a18a55177" />
+) |
 
-| Fitur Minimum | Status | Lokasi Implementasi |
-|---|---|---|
-| Login pemilik warung (AsyncStorage) | ✅ | `src/screens/LoginScreen.js`, `src/services/storage.js` |
-| Katalog produk (FlatList + tambah/hapus) | ✅ | `src/screens/KatalogScreen.js`, `src/screens/AddProductScreen.js` |
-| Keranjang belanja + total harga | ✅ | `src/screens/KeranjangScreen.js`, `src/context/CartContext.js` |
-| Foto produk via expo-image-picker | ✅ | `src/screens/AddProductScreen.js` |
-| Riwayat transaksi tersimpan (AsyncStorage) | ✅ | `src/screens/RiwayatScreen.js` |
-| Navigasi Bottom Tab + Stack | ✅ | `src/navigation/AppNavigator.js` |
+---
 
-## Checklist Fitur Teknis WAJIB
+## ✨ Fitur Utama
 
-1. **useState + Conditional Rendering** — `KatalogScreen.js` & `RiwayatScreen.js` punya 3 state (loading, empty, data terisi) dengan conditional rendering.
-2. **React Navigation (Stack + Tab)** — Root Stack (`Login` → `Main`), Bottom Tab (`Katalog`, `Keranjang`, `Riwayat`, `Profil`), dan Stack bersarang di dalam tab Katalog (`KatalogList` → `ProductDetail` → `AddProduct`) dengan parameter (`route.params.product`).
-3. **FlatList** — dipakai di `KatalogScreen`, `KeranjangScreen`, `RiwayatScreen`. Semua punya `keyExtractor` dan `ListEmptyComponent`.
-4. **AsyncStorage CRUD** — 3 jenis data tersimpan: session login, daftar produk, riwayat transaksi. Semua persist setelah app ditutup (lihat `src/services/storage.js`).
-5. **Form + Validasi** — `LoginScreen.js` (username/password/nama toko) dan `AddProductScreen.js` (nama, harga numerik, deskripsi) dengan pesan error jelas.
-6. **Device Feature** — `expo-image-picker` di `AddProductScreen.js`, menangani permission request dan denied state.
-7. **useEffect + Data Loading** — `KatalogScreen.js` dan `RiwayatScreen.js` memuat data dari AsyncStorage dengan `ActivityIndicator` (`LoadingSpinner.js`).
-8. **EAS Build APK** — konfigurasi ada di `eas.json` (lihat langkah build di bawah).
+- [x] Login/Register dengan validasi form
+- [x] Daftar [item domain] dengan FlatList
+- [x] Detail [item] dengan navigasi Stack
+- [x] [Fitur spesifik domain]
+- [x] Foto via expo-image-picker 
+- [x] Data persisten dengan AsyncStorage
+- [x] Bottom Tab Navigation (4 tab)
 
-## Struktur Folder
+---
 
-```
-HappyPaws-UAS/
-├── App.js
-├── app.json
-├── eas.json
-├── package.json
-├── babel.config.js
-├── src/
-│   ├── navigation/AppNavigator.js
-│   ├── context/CartContext.js
-│   ├── screens/
-│   │   ├── LoginScreen.js
-│   │   ├── KatalogScreen.js
-│   │   ├── ProductDetailScreen.js
-│   │   ├── AddProductScreen.js
-│   │   ├── KeranjangScreen.js
-│   │   ├── RiwayatScreen.js
-│   │   └── ProfilScreen.js
-│   ├── components/
-│   │   ├── ProductCard.js
-│   │   ├── LoadingSpinner.js
-│   │   └── EmptyState.js
-│   ├── services/
-│   │   ├── storage.js
-│   │   └── api.js
-│   └── constants/colors.js
-├── assets/
-│   ├── icon.png
-│   ├── splash.png
-│   └── screenshots/
-└── README.md
-```
+## 🛠️ Tech Stack
 
-## Cara Menjalankan
+| Layer | Teknologi |
+|-------|-----------|
+| Framework | React Native + Expo |
+| Navigation | React Navigation v6 (Stack + Bottom Tab) |
+| Storage | @react-native-async-storage/async-storage |
+| Device | expo-image-picker / expo-location |
+| Build | EAS Build (Expo Application Services) |
 
-Project ini dibuat mengikuti struktur `npx create-expo-app@latest --template blank@sdk-54`,
-menggunakan **Expo SDK 54** (React Native 0.81, React 19.1).
+---
+
+## 🚀 Cara Menjalankan
 
 ```bash
-# 1. Install dependencies
+git clone https://github.com/username/nama-repo.git
+cd nama-repo
 npm install
-
-# 2. Jalankan Expo
 npx expo start
-
-# 3. Scan QR code dengan aplikasi Expo Go (versi SDK 54) di HP
 ```
+Scan QR Code dengan Expo Go di HP.
 
-> Jika versi paket kurang cocok, jalankan `npx expo install --check` untuk
-> menyamakan otomatis dengan Expo SDK 54.
+---
 
-## Cara Build APK (EAS Build)
+## 📦 Download APK
 
-```bash
-npm install -g eas-cli
-eas login
-eas build:configure
-eas build --platform android --profile preview
-```
+[Download APK terbaru]https://expo.dev/accounts/faells/projects/happy-paws/builds/65ad460e-40e5-403a-8a90-affbb0191098
+---
 
-Setelah build selesai di cloud EAS, unduh APK dari dashboard EAS lalu upload ke
-GitHub Release atau Google Drive, dan pastikan link dapat diakses publik.
+## 🌐 Expo Snack
 
-## Akun Demo
+[Buka di Expo Snack]https://snack.expo.dev/@faells/uaspraktek
 
-Tidak ada akun default — silakan **Daftar** akun toko baru dari halaman Login
-(username minimal 4 karakter, password minimal 6 karakter).
+---
 
-## Teknologi
+## 👤 Developer
 
-- React Native 0.81 + Expo SDK 54
-- React Navigation v7 (Native Stack + Bottom Tabs)
-- AsyncStorage untuk persistensi data lokal
-- expo-image-picker untuk foto produk
-
-## Screenshot
-
-_Tempelkan minimal 3 screenshot alur utama (Login, Katalog, Keranjang/Riwayat) di folder `assets/screenshots/` dan referensikan di sini sebelum submit._
+**Rafael Sagala** | 243303621233 | Kelas 4 Pagi A
+Universitas Prima Indonesia — Prodi Sistem Informasi
+Mata Kuliah: Pemrograman Mobile (TI-MOBILE-01)
