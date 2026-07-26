@@ -57,13 +57,13 @@ Scan QR Code dengan Expo Go di HP.
 
 ## 📦 Download APK
 
-[Download APK terbaru]([LINK_APK_GITHUB_RELEASE_ATAU_DRIVE]([https://expo.dev/accounts/faells/projects/happy-paws/builds/65ad460e-40e5-403a-8a90-affbb0191098]))
+[Download APK terbaru]([LINK_APK_GITHUB_RELEASE_ATAU_DRIVE][https://expo.dev/accounts/faells/projects/happy-paws/builds/65ad460e-40e5-403a-8a90-affbb0191098])
 
 ---
 
 ## 🌐 Expo Snack
 
-[Buka di Expo Snack]([LINK_EXPO_SNACK]([https://snack.expo.dev/@faells/uaspraktek]))
+[Buka di Expo Snack]([LINK_EXPO_SNACK][https://snack.expo.dev/@faells/uaspraktek])
 
 ---
 
